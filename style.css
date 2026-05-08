@@ -1,0 +1,319 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* HEADER */
+    header {
+      background: #111827;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 35px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+    .logo .color{
+      color: #f8fafc;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+    }
+  .hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #38bdf8;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+}
+    .hero-content h1 {
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content h1 span {
+      color: #38bdf8;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #cbd5e1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+    }
+
+    /* SECTION */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #38bdf8;
+    }
+
+    /* ABOUT */
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    .about-image {
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 280px;
+      border-radius: 20px;
+      margin: auto;
+      border: 4px solid #38bdf8;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background: #334155;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #1e293b;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+/* --- SLIDER FIXES --- */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Adjust as needed */
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  /* 15s total = 3s per image for a 5-image set */
+  animation: slideShow 15s infinite; 
+}
+
+/* Delay for Project 2 (5 images) */
+.projects-grid .project-card:nth-child(2) .slide:nth-child(1) { animation-delay: 0s; }
+.projects-grid .project-card:nth-child(2) .slide:nth-child(2) { animation-delay: 3s; }
+.projects-grid .project-card:nth-child(2) .slide:nth-child(3) { animation-delay: 6s; }
+.projects-grid .project-card:nth-child(2) .slide:nth-child(4) { animation-delay: 9s; }
+.projects-grid .project-card:nth-child(2) .slide:nth-child(5) { animation-delay: 12s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }   /* Fade in */
+  20% { opacity: 1; }  /* Stay visible */
+  25% { opacity: 0; }  /* Fade out */
+  100% { opacity: 0; } /* Stay hidden until loop restarts */
+}
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    .project-content p {
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #334155;
+      color: white;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .success-message {
+      margin-top: 15px;
+      color: #4ade80;
+      display: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer p {
+      color: #94a3b8;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+    }

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Junait Hossain Dipto | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Dipt<span class="color">o</span></div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+    <div class="hero-image">
+      <img src="images/photo2 courtwala.jpeg" alt="Dipto">
+    </div>
+      <div>
+        <h1>Hi, I'm <span>Junait Hossain Dipto</span></h1>
+        <p>Entrepreneur | Web Designer | Creative Thinker</p>
+        <a href="#contact" class="btn">Hire Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>I am Junait Hossain Dipto, an entrepreneur and creative web designer passionate about building modern digital brands and online experiences.
+          </p>
+
+          <p>I specialize in designing clean, responsive, and user-friendly websites with a strong focus on product presentation, ecommerce, and visual storytelling.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img src="images/photo1.jpg" alt="Profile Image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Sales</h3>
+        </div>
+
+        <div class="skill-card">
+          <h3>Marketing</h3>
+        </div>
+
+        <div class="skill-card">
+          <h3>Fashion</h3>
+        </div>
+
+        <div class="skill-card">
+          <h3>Responsive Design</h3>
+        </div>
+
+        <div class="skill-card">
+          <h3>UI/UX Design</h3>
+        </div>
+
+        <div class="skill-card">
+          <h3>Ecommerce</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="images/photo3-blank.jpeg" alt="Project" style="height: 450px; width: 100%;"/>
+
+          <div class="project-content">
+            <h3>Blank</h3>
+            <p>Crafted to perfection</p>
+            <a href="https://www.instagram.com/blank.dhk/" class="btn">View Project</a>
+          </div>
+        </div>
+         <div class="project-card">
+            <div class="slider">
+              <img src="images/ferio1.jpeg" class="slide active">
+              <img src="images/ferio2.jpeg" class="slide">
+              <img src="images/ferio3.jpeg" class="slide">
+              <img src="images/ferio4.jpeg" class="slide">
+              <img src="images/ferio5.jpeg" class="slide">
+            </div>
+            <div class="project-content">
+              <h3>Ferio</h3>
+              <p>Make each whimsy Twist</p>
+              <a href="#" class="btn">View Project</a>
+            </div>
+        </div>
+        <div class="project-card">
+          <img src="images/productdesign.jpeg" alt="Project"  style="height: 450px; width: 100%;"/>
+
+          <div class="project-content">
+            <h3>Product Design</h3>
+            <p>created and developed visually appealing products</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+
+        <p class="success-message" id="successMessage">
+          Your message has been sent successfully.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Junait Hossain Dipto. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // CONTACT FORM
+    contactForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const data = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbxA_vxz3DMGDbfRj3kE4tHPMLREGu8fBZbYgTqa-znfwIVUUP6Anhu7eGs2vsRSK911/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => response.text())
+  .then(result => {
+    successMessage.style.display = 'block';
+    contactForm.reset();
+
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 3000);
+  })
+  .catch(error => {
+    alert("Error sending message!");
+  });
+});
+    // SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
